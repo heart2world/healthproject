@@ -1,0 +1,6 @@
+[ 2018-06-06T17:28:31+08:00 ] 183.228.28.230 /index.php?g=admin&m=main&a=index
+ERR: Cron:cron Runat 2018-06-06 17:28:31 Use 0.000653 s
+
+[ 2018-06-06T17:29:31+08:00 ] 120.204.17.70 /index.php?g=admin&m=main&a=index
+ERR: Cron:cron Runat 2018-06-06 17:29:31 Use 0.000679 s
+

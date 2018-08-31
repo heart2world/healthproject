@@ -1,0 +1,12 @@
+[ 2018-07-20T17:21:48+08:00 ] 183.226.81.239 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-07-20 17:21:48 Use 0.000682 s
+
+[ 2018-07-20T17:30:46+08:00 ] 183.226.81.239 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-07-20 17:30:46 Use 0.000683 s
+
+[ 2018-07-20T17:31:46+08:00 ] 101.226.79.241 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-07-20 17:31:46 Use 0.000692 s
+
+[ 2018-07-20T18:50:02+08:00 ] 183.226.81.239 /index.php?g=admin&m=member&a=checklogedit&id=67
+ERR: Cron:cron Runat 2018-07-20 18:50:02 Use 0.000684 s
+

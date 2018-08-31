@@ -1,0 +1,21 @@
+[ 2018-06-19T10:44:02+08:00 ] 183.228.30.38 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-19 10:44:02 Use 0.000615 s
+
+[ 2018-06-19T10:55:35+08:00 ] 183.228.30.38 /index.php?g=admin&m=member&a=report_post
+ERR: Cron:cron Runat 2018-06-19 10:55:35 Use 0.000647 s
+
+[ 2018-06-19T10:56:42+08:00 ] 120.204.17.71 /index.php?g=admin&m=member&a=checkdetail&id=61
+ERR: Cron:cron Runat 2018-06-19 10:56:42 Use 0.000668 s
+
+[ 2018-06-19T10:57:49+08:00 ] 117.144.246.149 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-06-19 10:57:49 Use 0.000669 s
+
+[ 2018-06-19T11:26:59+08:00 ] 120.204.17.70 /index.php?g=admin&m=member&a=report&id=54
+ERR: Cron:cron Runat 2018-06-19 11:26:59 Use 0.000683 s
+
+[ 2018-06-19T11:30:21+08:00 ] 183.228.30.38 /index.php?g=admin&m=member&a=checklog&id=54
+ERR: Cron:cron Runat 2018-06-19 11:30:21 Use 0.000687 s
+
+[ 2018-06-19T11:31:20+08:00 ] 117.185.117.52 /index.php?g=admin&m=member&a=checklog&id=54
+ERR: Cron:cron Runat 2018-06-19 11:31:20 Use 0.000660 s
+

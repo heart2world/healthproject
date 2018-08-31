@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>信息设置</title>
+      <link rel="stylesheet" href="__PUBLIC__/app/lib/weui/jquery-weui.css" />
+      <link rel="stylesheet" href="__PUBLIC__/app/lib/weui/weui.min.css" />
+      <link rel="stylesheet" href="__PUBLIC__/app/css/public.css" />
+      <link rel="stylesheet" href="__PUBLIC__/app/css/style.css" />
+      <script type="text/javascript" src="__PUBLIC__/app/lib/jq/jquery-1.10.2.js" ></script>
+      <script type="text/javascript" src="__PUBLIC__/app/lib/weui/jquery-weui.js" ></script>
+      <script type="text/javascript" src="__PUBLIC__/app/js/common.js" ></script>
+  </head>
+  <style>
+  .weui-cells:before{
+	border-top:0
+  }
+  .weui-cell:before{
+	border-top:0
+  }
+  .infoSec .Box>a .tit,.infoSec .Box>div .tit{
+	color:#333;
+	font-size:17px
+  }
+	.weui-cell__bd p{
+		color:#999;
+	}
+	.weui-cell__ft{
+		color:#999
+	}
+	
+	.backCenter{
+		display: inline-block;
+		padding: 10px 20px;
+		background: #4fbbc5;
+		position: fixed;
+		left: 30%;
+		right: 30%;
+		text-align: center;
+		color: #fff;
+		font-size: 1.4rem;
+		border-radius: 30px;
+		box-shadow: 5px 5px 20px #ccc;
+		margin: 0 auto;
+		bottom: 2rem;
+	}
+  </style>
+  <body>
+    <!--<header class="pageHeader">
+      <div class="back">返回</div>
+      <h2>信息设置</h2>
+    </header>-->
+    <section class="contentSec infoSec">
+      <div class="Box Box1">
+        <p class="title" style="padding-bottom:14px">一、基础信息</p>
+        <div class="weui-cells">
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editname')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">姓名</p>
+                    </div>
+                    <div class="weui-cell__ft">{$nicename}</div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editsex')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">性别</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$sex neq ''">{$sex}<else/>未设置</if></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editheight')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">身高</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$mheight neq ''">{$mheight}<else/>未设置</if></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editweight')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">体重</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$mweight neq ''">{$mweight}<else/>未设置</if></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editbirth')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">出生日期</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$birthday neq ''">{$birthday}<else/>未设置</if></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editcard')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">身份证</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$cardnum neq ''">{$cardnum}<else/>未设置</if></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="{:U('User/Profile/editaddress')}">
+                    <div class="weui-cell__bd">
+                        <p style="color:#333">住址</p>
+                    </div>
+                    <div class="weui-cell__ft"><if condition="$address neq ''">{$address}<else/>未设置</if></div>
+                </a>
+    
+            </div>
+      </div>
+      <div class="Box Box2">
+        <p class="title">二、我的健康</p>
+        <a href="{:U('User/Profile/editzjjkzk')}">
+          <p class="tit">最近健康状况</p>
+          <div class="weui-cells">
+                  <volist name="myhealth" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="count($myhealth) eq 0 && $healthindicators eq '' && $healthelse eq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$healthindicators neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:120px">体检阳性指标</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$healthindicators}
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$healthelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$healthelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editgzxtjb')}">
+          <p class="tit">关注系统疾病</p>
+          <div class="weui-cells">
+                  <volist name="sysdisease" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="$syselse eq '' && count($sysdisease) eq 0">
+                   <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$syselse neq ''">
+                   <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$syselse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editxbs')}">
+          <p class="tit">现病史</p>
+          <div class="weui-cells">
+                  <volist name="nowillness" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="count($nowillness) eq 0 && $illnesselse eq ''">
+                   <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$illnesselse neq ''">
+                   <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$illnesselse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editjzbs')}">
+          <p class="tit">家族病史</p>
+          <div class="weui-cells">
+                  <volist name="historyillness" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="count($historyillness) eq 0 && $hillnesselse eq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$hillnesselse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$hillnesselse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editsss')}">
+          <p class="tit">手术史</p>
+          <div class="weui-cells">
+                  <if condition="$historysurgery eq '无'">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>无</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <volist name="list" id="va">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>手术{$va.anumber}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>手术名称</p>
+                      </div>
+                      <div class="weui-cell__ft">{$va.surgeryname}
+                      </div>
+                  </div>
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>手术时间</p>
+                      </div>
+                      <div class="weui-cell__ft">{$va.surgerytime}
+                      </div>
+                  </div>
+				  <if condition="$va['surgeryelse'] neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$va.surgeryelse}
+                      </div>
+                  </div>
+				  </if>
+                  </volist>
+                  <if condition="count($list) eq 0 && $historysurgery eq ''">
+                   <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/edityys')}">
+          <p class="tit">用药史</p>
+          <div class="weui-cells">
+                  <volist name="historydurg" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                   <if condition="$drugname eq '' && $drugpoint eq '' && $drugelse eq '' && count($historydurg) eq 0">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$drugname neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:100px">药品名称</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$drugname}
+                      </div>
+                  </div>
+                  </if>
+                   <if condition="$drugpoint neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:100px">服务剂量</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$drugpoint}
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$drugelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$drugelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editgms')}">
+          <p class="tit">过敏史</p>
+          <div class="weui-cells">
+                  <volist name="anaphylaxis" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="$anaphylaxis eq '' && count($anaphylaxis) eq 0">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$anaphylaxiselse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$anaphylaxiselse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editnxsys')}">
+          <p class="tit">女性生育史</p>
+          <div class="weui-cells">
+                  <if condition="$womenbirth eq '无'">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>无</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$womenbirth eq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$womenbirth neq '' && $womenbirth neq '无'">
+                    <if condition="$winfo['liuchansn'] neq ''">
+                        <div class="weui-cell weui-cell_access">                      
+                            <div class="weui-cell__bd">
+                                <p>流产史</p>
+                            </div>
+                            <div class="weui-cell__ft">{$winfo.liuchansn}
+                            </div>                     
+                        </div>
+                     </if>
+                    <if condition="$winfo['hysn'] neq ''">
+                      <div class="weui-cell weui-cell_access">  
+                        <div class="weui-cell__bd">
+                            <p>怀孕史</p>
+                        </div>
+                        <div class="weui-cell__ft">{$winfo.hysn}
+                        </div>
+                      </div>
+                      </if>
+                      <if condition="$winfo['scsn'] neq ''">
+                      <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>生产史</p>
+                      </div>
+                      <div class="weui-cell__ft">{$winfo.scsn}
+                      </div>
+                      </div>
+                      </if>
+                      <if condition="$winfo['scmethod'] neq ''">
+                      <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>生产方式</p>
+                      </div>
+                      <div class="weui-cell__ft">{$winfo.scmethod}
+                      </div>
+                      </div>
+                      </if>
+                      <if condition="$winfo['gwysn'] neq ''">
+                      <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>宫外孕史</p>
+                      </div>
+                      <div class="weui-cell__ft">{$winfo.gwysn}
+                      </div>
+                      </div>
+                      </if>
+                      <if condition="$winfo['jyyear'] neq ''">
+                      <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>绝经年龄</p>
+                      </div>
+                      <div class="weui-cell__ft">{$winfo.jyyear}
+                      </div>
+                      </div>
+                      </if>
+                      <if condition="$winfo['elsedesc'] neq ''">
+                      <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$winfo.elsedesc}
+                      </div>
+                      </div>
+                      </if>
+                  </div>
+                  </if>
+              </div>
+            </a>
+      </div>
+      <div class="Box Box3">
+        <p class="title">三、我的生活方式</p>
+        <a href="{:U('User/Profile/editwdsmqk')}">
+          <p class="tit">睡眠情况</p>
+          <div class="weui-cells">
+                  <if condition="count($lifestyle) eq 0 && $lifeelse eq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <volist name="lifestyle" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="$lifeelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$lifeelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editxyxg')}">
+          <p class="tit">吸烟习惯</p>
+          <div class="weui-cells">
+                  <if condition="$smokeing neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$smokeing}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  <else/>
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$predaysmoke neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>每日（根）</p>
+                      </div>
+                      <div class="weui-cell__ft">{$predaysmoke}
+                      </div>
+                  </div>
+                  </if>
+                   <if condition="$smokeyear neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>已抽（年）</p>
+                      </div>
+                      <div class="weui-cell__ft">{$smokeyear}
+                      </div>
+                  </div>
+                  </if>
+                   <if condition="$smokeelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$smokeelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/edityjxg')}">
+          <p class="tit">饮酒习惯</p>
+          <div class="weui-cells">
+                  <if condition="$drinkstyle neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$drinkstyle}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  <else/>
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$predaydrink neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>每日（ml）</p>
+                      </div>
+                      <div class="weui-cell__ft">{$predaydrink}
+                      </div>
+                  </div>
+                  </if>
+                   <if condition="$drinkyear neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>已饮（年）</p>
+                      </div>
+                      <div class="weui-cell__ft">{$drinkyear}
+                      </div>
+                  </div>
+                  </if>
+                   <if condition="$drinkelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$drinkelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editydqk')}">
+          <p class="tit">运动情况</p>
+          <div class="weui-cells">
+                  <if condition="$movement eq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  <else/>
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$movement}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$moveelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">运动方式</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$moveelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editysxg')}">
+          <p class="tit">饮食习惯</p>
+          <div class="weui-cells">
+                  <volist name="foodstyle" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="$foodelse eq '' && count($foodstyle) eq 0">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$foodelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$foodelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+        <a href="{:U('User/Profile/editxlzk')}">
+          <p class="tit">心理状况</p>
+          <div class="weui-cells">
+                   <volist name="psychologicstatus" id="va">
+                  <if condition="$va neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>{$va}</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  </volist>
+                  <if condition="$heartelse eq '' && count($psychologicstatus) eq 0">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p>请选择</p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                  </div>
+                  </if>
+                  <if condition="$heartelse neq ''">
+                  <div class="weui-cell weui-cell_access">
+                      <div class="weui-cell__bd">
+                          <p style="min-width:50px">其他</p>
+                      </div>
+                      <div class="weui-cell__ft" style="word-break:break-word;">{$heartelse}
+                      </div>
+                  </div>
+                  </if>
+              </div>
+            </a>
+      </div>
+    
+		<a class="backCenter" href="{:U('User/Center/index')}">返回个人中心</a>
+	</section>
+  </body>
+</html>

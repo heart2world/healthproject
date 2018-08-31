@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>首页</title>
+	    <link rel="stylesheet" href="../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../css/public.css" />
+	    <link rel="stylesheet" href="../css/style.css" />
+	    <script type="text/javascript" src="../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../js/common.js" ></script>
+	</head>
+	<body>
+		<header class="mainHeader">
+			<div>我的检查</div>
+		</header>
+		<section class="mainSec">
+			<!--我的检查-->
+			<div class="myCheck">
+				<div class="weui-cells">
+		            <a class="weui-cell weui-cell_access" href="jianchaDetail.html">
+		                <div class="weui-cell__bd">
+		                    <p>检查时间：2018-4-9 16:00</p>
+		                    <p>检查机构：大坪医院</p>
+		                </div>
+		                <div class="weui-cell__ft jt">
+		                </div>
+		            </a>
+		            <a class="weui-cell weui-cell_access" href="jianchaDetail.html">
+		                <div class="weui-cell__bd">
+		                    <p>检查时间：2018-4-9 16:00</p>
+		                    <p>检查机构：大坪医院</p>
+		                </div>
+		                <div class="weui-cell__ft jt">
+		                </div>
+		            </a>
+		        </div>
+			</div>
+		</section>
+		<footer class="mainFooter">
+			<div class="wdjc active">我的检查</div>
+			<div class="jkrz"><a href="index12.html">健康日志</a></div>
+			<div class="grzx"><a href="index13.html">个人信息</a></div>
+		</footer>
+	</body>
+</html>
+<script>
+bgImg('bgImg',.6);
+bgImg('headImg',1);
+	$(function(){
+		var height=$(window).height();
+		$('.mainSec').height(height-106);
+//		$('.mainFooter>div').click(function(){
+//			var index=$(this).index();
+//			$(this).addClass('active').siblings().removeClass('active');
+//			$('.mainSec>div').hide().eq(index).show();
+//			$('.mainHeader div').hide().eq(index).show();
+//		})
+	})
+</script>

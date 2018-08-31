@@ -1,0 +1,15 @@
+[ 2018-08-20T14:06:23+08:00 ] 101.227.143.143 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-08-20 14:06:23 Use 0.000757 s
+
+[ 2018-08-20T14:14:33+08:00 ] 101.226.79.223 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-08-20 14:14:33 Use 0.000772 s
+
+[ 2018-08-20T14:16:19+08:00 ] 101.226.79.235 /index.php?g=user&m=center&a=logout
+ERR: Cron:cron Runat 2018-08-20 14:16:19 Use 0.000839 s
+
+[ 2018-08-20T14:18:49+08:00 ] 113.96.218.50 /index.php?g=user&m=register&a=index
+ERR: Cron:cron Runat 2018-08-20 14:18:49 Use 0.000771 s
+
+[ 2018-08-20T15:58:40+08:00 ] 14.215.176.7 /index.php?g=user&m=login&a=index
+ERR: Cron:cron Runat 2018-08-20 15:58:40 Use 0.000823 s
+

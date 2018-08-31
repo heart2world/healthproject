@@ -1,0 +1,294 @@
+
+
+body .weui-cells{
+	margin-top: 0;
+}
+body .weui-icon-cancel{
+	color: #666;
+}
+
+/*按钮色*/
+body .weui-btn_primary{    
+	background-color: #4fbbc5;
+}
+body .weui-btn_primary:not(.weui-btn_disabled):active{
+	background-color: #4fbbc5;
+}
+
+/*选框色*/
+.weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{
+	color: #4fbbc5;
+}
+
+/*右箭头*/
+body .weui-cell_access .weui-cell__ft.jt:after{
+	content: none;
+}
+body .weui-cell_access .weui-cell__ft.jt{
+	width: 23px;
+	height: 23px;
+	background: url(../img/jianchayoula@2x.png) no-repeat;
+	background-size: 23px;
+	
+}
+
+/*下箭头*/
+.jt2{
+	background: url(../img/xiala@2x.png) no-repeat;
+	background-size: 18px;
+	background-position: right;
+	padding-right: 25px;
+}
+.jt2.active{
+	background: url(../img/shangla@2x.png) no-repeat;
+	background-size: 18px;
+	background-position: right;
+}
+
+/*横线拉通*/
+body .weui-cell:before{
+	left:0;
+}
+
+/*body a:active{
+	background-color: #ececec;
+}*/
+
+.message{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0);
+	text-align: center;
+}
+.message .messageText{
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+.message .messageText>p{
+	font-size: 1.4rem;
+	display: inline-block;
+	padding: 5px 20px;
+	border-radius: 50px;
+	background: rgba(0,0,0,.3);
+	color: #fff;
+}
+/*首页*/
+.mainSec{
+	margin: 45px 0 61px;
+}
+.healthyLog{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.healthyLog .cont{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.healthyLog .cont>a{
+	display: block;
+	padding: 15px 0;
+	border-top: 1px solid #eee;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+/*个人信息*/
+.selgManage .info{
+	border-bottom: 1px solid #eee;
+}
+.Info{
+	width: 100%;
+	height: 17rem;
+	background-image: url(../img/pic_tupian.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.Info .headBox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	/*background: #ff7852;*/
+	background: rgba(255,255,255,.5);
+}
+.Info .headBox .headImg{
+	width: 8rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 20px auto 5px;
+	background: #fff;
+}
+.Info .headBox p{
+	font-size: 1.4rem;
+	line-height: 30px;
+}
+.bottomText{
+	margin-top: 3.5rem;
+	text-align: center;
+	line-height: 30px;
+	font-size: 1.2rem;
+}
+
+/*信息设置*/
+.contentSec{
+	/*margin-top: 45px;*/
+}
+.infoSec .Box .title{
+	padding: 18px 15px 0;
+	color: #4fbbc5;
+	font-size: 1.3rem;
+	font-weight: bold;
+	vertical-align:middle;
+}
+.infoSec .Box>a{
+	display: block;
+}
+.infoSec .Box>a .tit,.infoSec .Box>div .tit,.sssBox .tit{
+	padding: 13px 15px 10px;
+	color: #999;
+	font-size: 1.3rem;
+	vertical-align:middle;
+}
+.sssBox .tit>span{
+	float: right;
+	color: #4fbbc5;
+}
+
+/*检查详情*/
+.jieguoBox>img{
+	width: 80%;
+	margin-top: 1rem;
+}
+
+/*常见指标*/
+.zhibiao{
+	color: #4fbbc5;
+}
+.details{
+	border-top: 1px solid #d9d9d9;
+}
+.details>div{
+	padding: 10px 0;
+	border-bottom: 1px solid #d9d9d9;
+}
+.details>div:last-child{
+	border: 0;
+}
+.details .tit{
+	padding: 0 15px 10px;
+	color: #4fbbc5;
+}
+.details .weui-cell:before{
+	border: 0;
+}
+.details .weui-cell{
+	padding: 0 15px;
+}
+
+/*写日志*/
+.logSec .tit{
+	color: #4fbbc5;
+	font-size: 1.4rem;
+	padding: 10px 15px;
+	background: #f9f9f9;
+	margin-top: 0;
+}
+.logSec .weui-cells:before,.logSec .weui-cells:after{
+	border: 0;
+}
+.descrip{
+	background:#fff
+}
+.picBox{
+	overflow:hidden;
+	padding:0 1rem 1rem;
+}
+.picBox .addBtn,
+.picBox .imgBoxs .imgBox
+{
+	float:left;
+	width:5rem;
+	height:5rem;
+	position:relative;
+	margin:.8rem .8rem 0 0;
+}
+.picBox .imgBox img{
+	width:5rem;
+	height:5rem;
+}
+.picBox .imgBox .delBtn{
+	position:absolute;
+	top:-.5rem;
+	right:-.5rem;
+	width:1.2rem;
+	height:1.2rem;
+	border-radius:60%;
+	background:url('../img/shanchu.png') #fff no-repeat center center;
+	background-size:cover;
+}
+.picBox .addBtn{
+	font-size:3rem;
+	background:#eee;
+	line-height:5rem;
+	text-align:center;
+	color:#fff
+}
+
+/*注册*/
+.getCode{
+	border-left: 1px solid #ccc;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 12px 5px;
+	color: #4fbbc5;
+	font-size: 17px;
+	min-width: 3rem;
+}
+.getCode.active{
+	color: #ccc;
+}
+
+/*温馨提示*/
+.tips{
+	padding: 5px 15px;
+	color: #999;
+}
+
+.actionBtn{
+	overflow:hidden;
+}
+.actionBtn .weui-btn{
+	width:46%;
+	float:left;
+	display:inline-block;
+	margin:0 20px 0 0;
+}
+.actionBtn .weui-btn:last-child{
+	margin:0;
+	float:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

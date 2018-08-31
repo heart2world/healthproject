@@ -1,0 +1,261 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>写日志</title>
+	    <link rel="stylesheet" href="/public/app/lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="/public/app/lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="/public/app/css/public.css" />
+	    <link rel="stylesheet" href="/public/app/css/style.css" />
+	    <script type="text/javascript" src="/public/app/lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="/public/app/lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="/public/app/js/common.js" ></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	</head>
+	<style>
+		input[type="date"]{
+			appearance:none;
+			-moz-appearance:none;
+			-webkit-appearance:none;
+		}
+		input[type="date"]:before{
+			content: attr(placeholder);
+			color:#aaa;
+		}
+		input[type="date"].full:before{
+			content: attr();
+			color:#fff;
+		}
+		
+		.pic-meng{
+			position:fixed;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			background:rgba(0,0,0,.4);
+			display:none;
+		}
+		.pic-meng .pic-meng-content{
+			display:table;
+			text-align:center;
+			height:100%;
+			width:100%
+		}
+		.pic-meng .pic-meng-content>div{
+			display:table-cell;
+			vertical-align:middle;
+		}
+		.pic-meng .pic-meng-content img{
+			max-width:100%;
+			margin;0 auto;
+		}
+		.xueya{
+			text-align:right;
+		}
+		.xueya input{
+			display:inline-block;
+			width:30%;
+			text-align:left;
+		}
+		.xueya input:last-child{
+			text-align:right;
+		}
+	</style>
+	<body style="background: #f9f9f9;">
+		<section class="contentSec logSec">
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+	                <div class="weui-cell__hd" style="-webkit-box-flex: 1; -webkit-flex: 1; flex: 1">
+	                	<label for="" class="weui-label">日期</label>
+	                </div>
+	                <div class="weui-cell__bd" style="-webkit-box-flex: none; -webkit-flex: none; flex: none; margin-right:-25px;">
+	                    <input class="weui-input right" type="date" id="atime" style="text-align:right;font-size:16px;" value="<?php echo ($info["logtime"]); ?>">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="min-width: 11rem;">体重（KG）</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right" type="text" id="mweight" value="<?php echo ($info["mweight"]); ?>" pattern="[0-9]*" placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="min-width: 12rem;">血糖（mmol/L）</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right" type="text" id="mmxt" value="<?php echo ($info["mmxt"]); ?>" pattern="[0-9]*" placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="min-width: 11rem;">血压（mmHg）</label>
+	                </div>
+	                <div class="weui-cell__bd xueya">
+	                    <input class="weui-input" type="text" id="mmxy" value="<?php echo ($info["mmxy"]); ?>" placeholder="请输入">/
+	                    <input class="weui-input" type="text" id="mmxy2" value="<?php echo ($info["mmxy2"]); ?>" placeholder="请输入">
+	                </div>
+	            </div>
+	        </div>
+            <div class="tit">身体描述</div>
+			<div class="descrip">
+				<div class="weui-cells weui-cells_form">
+					<div class="weui-cell">
+						<div class="weui-cell__bd">
+							<textarea class="weui-textarea" id="desc" placeholder="请输入..." rows="3"><?php echo ($info["desc"]); ?></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="picBox">
+					<div class="imgBoxs">
+						<?php if(is_array($imgs)): $i = 0; $__LIST__ = $imgs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$va): $mod = ($i % 2 );++$i; if($va != ''): ?><div class="imgBox">
+							<span class="delBtn" onclick="delFn(this)"></span>
+							<img src="<?php echo ($va); ?>" onclick="showPic('<?php echo ($va); ?>')" >
+						</div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+					</div>
+					<div class="addBtn">+</div>
+					<input type="hidden" id="imgs" value="<?php echo ($info["imgs"]); ?>">
+				</div>
+			</div>
+	        <div class="pd20">
+	        	<input type="hidden" id="aid" value="<?php echo ($info["id"]); ?>">
+	        	<a href="javascript:void(0);" class="weui-btn weui-btn_primary save">保存</a>
+	        </div>
+		</section>
+		<div class="pic-meng">
+			<div class="pic-meng-content">
+				<div>
+					<img src="" >
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+$(function () {
+	// 3. 通过config接口注入权限验证配置
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "<?php echo $signPackage['appId'];?>", // 必填，公众号的唯一标识
+        timestamp: <?php echo $signPackage['timestamp'];?>, // 必填，生成签名的时间戳
+        nonceStr: "<?php echo $signPackage['nonceStr'];?>", // 必填，生成签名的随机串
+        signature: "<?php echo $signPackage['signature'];?>", // 必填，签名，见附录1
+        jsApiList: [
+			"startRecord",
+			"stopRecord",
+			"onVoiceRecordEnd",
+			"playVoice",
+			"pauseVoice",
+			"stopVoice",
+			"onVoicePlayEnd",
+			"uploadVoice",
+			"downloadVoice",
+			"chooseImage",
+            "uploadImage",
+            "downloadImage",
+            "previewImage"
+        ]
+    });
+	// 4. 通过ready接口处理成功验证
+    wx.ready(function () { 
+		//添加图片
+		$('.addBtn').click(function(){
+			wx.chooseImage({
+			   count: 1, 
+				 success: function (res) {
+					 var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片       
+					 wx.uploadImage({
+						 localId: localIds[0], // 需要上传的图片的本地ID，由chooseImage接口获得
+						 isShowProgressTips: 0, // 默认为1，显示进度提示
+						 success: function (res) {
+						  var serverId = res.serverId; // 返回图片的服务器端ID 									
+						   $.ajax({
+							 type: "POST",
+							 url: "<?php echo U('User/center/getimgpost');?>",
+							 data: {"access_token":"<?php echo $signPackage['token'];?>","media_id":serverId},
+							 success: function (res) {
+								
+								if(res.status==1)
+								{
+									 $('.imgBoxs').append('<div class="imgBox"><span class="delBtn" onclick="delFn(this)"></span><img src="'+res.strimgurl+'" onclick=\'showPic("'+res.strimgurl+'")\'></div>');
+									 var imgstr=$("#imgs").val();
+									 $("#imgs").val(imgstr+res.strimgurl+',');
+								}
+							 }
+						   });
+						 },
+						  fail: function (res) {
+						  alert("图片上传失败");           
+
+					   }
+					});
+				 }
+			 });
+			
+		})
+    });
+})
+</script>
+<script>
+
+	function showPic(urls){
+		$('.pic-meng img').attr('src',urls);
+		$('.pic-meng').show();
+	}
+	//删除图片
+	function delFn(obj){
+		$(obj).parents('.imgBox').remove();
+	}
+		
+	$('.pic-meng').click(function(){
+		$(this).hide();
+	})
+	$(function(){
+		$('.save').click(function(){
+		var imgstr='';
+			$(".imgBox img").each(function(){
+				imgstr+=$(this).attr("src")+",";
+			})
+			imgstr=imgstr.substr(0,imgstr.length-1);
+			
+			$("#imgs").val(imgstr);
+			var state=1;
+			if($("#atime").val() == '')
+			{
+				message("请选择日期");
+				return false;
+			}
+			else{
+			
+				var pdata ={
+					'logtime':$("#atime").val(),
+					'mweight':$("#mweight").val(),
+					'mmxt':$("#mmxt").val(),
+					'mmxy':$("#mmxy").val(),
+					'mmxy2':$("#mmxy2").val(),
+					'desc':$("#desc").val(),
+					'id':$("#aid").val(),
+					'imgs':$("#imgs").val()
+				};
+				$.ajax({
+					url:"<?php echo U('User/Center/writepost');?>",
+					data:pdata,
+					type:'POST',
+					success:function(data){
+						if(data.status==0)
+						{
+							message(data.msg);
+							setTimeout(function(){
+	  							location.href=data.url;  									
+	  						},1500);
+						}
+					}
+				})
+			}
+		})
+	})
+</script>

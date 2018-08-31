@@ -1,0 +1,18 @@
+[ 2018-06-12T16:18:39+08:00 ] 61.151.178.173 /index.php?g=user&m=login&a=index
+ERR: Cron:cron Runat 2018-06-12 16:18:39 Use 0.000669 s
+
+[ 2018-06-12T17:21:12+08:00 ] 183.228.33.25 /index.php?g=user&m=register&a=index
+ERR: Cron:cron Runat 2018-06-12 17:21:12 Use 0.000742 s
+
+[ 2018-06-12T17:24:57+08:00 ] 183.228.33.25 /index.php?g=user&m=center&a=checklist
+ERR: Cron:cron Runat 2018-06-12 17:24:57 Use 0.000726 s
+
+[ 2018-06-12T17:38:55+08:00 ] 183.228.33.25 /index.php?g=user&m=center&a=checklist
+ERR: Cron:cron Runat 2018-06-12 17:38:55 Use 0.000808 s
+
+[ 2018-06-12T17:39:59+08:00 ] 120.204.200.82 /index.php?g=user&m=center&a=jianchadetail&id=55
+ERR: Cron:cron Runat 2018-06-12 17:39:59 Use 0.001200 s
+
+[ 2018-06-12T17:42:22+08:00 ] 183.228.33.25 /index.php?g=user&m=register&a=index
+ERR: Cron:cron Runat 2018-06-12 17:42:22 Use 0.000908 s
+

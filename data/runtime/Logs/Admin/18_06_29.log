@@ -1,0 +1,30 @@
+[ 2018-06-29T08:57:50+08:00 ] 183.228.29.163 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-29 08:57:50 Use 0.000703 s
+
+[ 2018-06-29T08:58:50+08:00 ] 117.185.117.51 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-29 08:58:50 Use 0.000808 s
+
+[ 2018-06-29T09:13:43+08:00 ] 117.185.117.56 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-06-29 09:13:43 Use 0.002248 s
+
+[ 2018-06-29T09:17:38+08:00 ] 183.228.29.163 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-06-29 09:17:38 Use 0.002143 s
+
+[ 2018-06-29T09:18:43+08:00 ] 120.204.17.70 /index.php?g=admin&m=member&a=report&id=58
+ERR: Cron:cron Runat 2018-06-29 09:18:43 Use 0.002222 s
+
+[ 2018-06-29T09:42:24+08:00 ] 183.228.29.163 /index.php?g=admin&m=member&a=report&id=58
+ERR: Cron:cron Runat 2018-06-29 09:42:24 Use 0.006478 s
+
+[ 2018-06-29T09:55:12+08:00 ] 120.204.17.71 /index.php?g=admin&m=member&a=checklog&id=57
+ERR: Cron:cron Runat 2018-06-29 09:55:12 Use 0.000729 s
+
+[ 2018-06-29T09:58:06+08:00 ] 183.228.29.163 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-29 09:58:06 Use 0.000718 s
+
+[ 2018-06-29T09:59:09+08:00 ] 117.144.246.149 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-29 09:59:09 Use 0.000696 s
+
+[ 2018-06-29T20:20:12+08:00 ] 101.132.102.45 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-29 20:20:12 Use 0.000647 s
+

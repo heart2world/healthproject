@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我的检查</title>
+	    <link rel="stylesheet" href="__PUBLIC__/app/lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="__PUBLIC__/app/lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="__PUBLIC__/app/css/public.css" />
+	    <link rel="stylesheet" href="__PUBLIC__/app/css/style.css" />
+	    <script type="text/javascript" src="__PUBLIC__/app/lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="__PUBLIC__/app/lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="__PUBLIC__/app/js/common.js" ></script>
+	   
+	</head>
+	<body>
+		<!--<header class="mainHeader">
+			<div>我的检查</div>
+		</header>-->
+		<section class="mainSec" style="margin-top:0">
+			<!--我的检查-->
+			<div class="myCheck">
+				<div class="weui-cells">
+					<volist name="list" id="va">
+		            <a class="weui-cell weui-cell_access" href="{:U('User/Center/jianchaDetail',array('id'=>$va['id']))}">
+		                <div class="weui-cell__bd">
+		                    <p>检查时间：{$va.checktime}</p>
+		                    <p>检查机构：{$va.checkname}</p>
+		                </div>
+		                <div class="weui-cell__ft jt">
+		                </div>
+		            </a>
+		            </volist>
+		        </div>
+		        <if condition="count($list) eq 0">
+		            <center style="margin-top: 10px;">没有更多了~</center>
+		        </if>
+			</div>
+		</section>
+		<footer class="mainFooter">
+			<a class="wdjc active" href="{:U('User/Center/checklist')}">我的检查</a>
+			<a class="jkrz" href="{:U('User/Center/loglist')}">健康日志</a>
+			<a class="grzx" href="{:U('User/Center/index')}">个人信息</a>
+		</footer>
+	</body>
+</html>
+<script>
+bgImg('bgImg',.6);
+bgImg('headImg',1);
+	$(function(){
+		var height=$(window).height();
+		$('.mainSec').height(height-106);
+	})
+</script>

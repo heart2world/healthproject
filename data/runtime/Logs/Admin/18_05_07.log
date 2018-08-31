@@ -1,0 +1,27 @@
+[ 2018-05-07T12:48:23+08:00 ] 183.228.33.171 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-05-07 12:48:23 Use 0.000902 s
+
+[ 2018-05-07T12:49:23+08:00 ] 120.204.17.72 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-05-07 12:49:23 Use 0.000878 s
+
+[ 2018-05-07T12:57:24+08:00 ] 120.204.17.71 /index.php?g=admin&m=member&a=checklog&id=42
+ERR: Cron:cron Runat 2018-05-07 12:57:24 Use 0.000820 s
+
+[ 2018-05-07T16:00:17+08:00 ] 183.228.33.171 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-05-07 16:00:17 Use 0.001148 s
+
+[ 2018-05-07T16:01:54+08:00 ] 120.204.17.72 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-05-07 16:01:54 Use 0.000921 s
+
+[ 2018-05-07T16:03:59+08:00 ] 183.228.33.171 /index.php?g=admin&m=member&a=checkdetail&id=49
+ERR: Cron:cron Runat 2018-05-07 16:03:59 Use 0.000912 s
+
+[ 2018-05-07T16:04:59+08:00 ] 120.204.17.72 /index.php?g=admin&m=member&a=checkdetail&id=49
+ERR: Cron:cron Runat 2018-05-07 16:04:59 Use 0.000830 s
+
+[ 2018-05-07T17:59:05+08:00 ] 183.228.33.171 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-05-07 17:59:05 Use 0.000882 s
+
+[ 2018-05-07T18:00:08+08:00 ] 183.228.33.171 /index.php?g=admin&m=member&a=checklog&id=41
+ERR: Cron:cron Runat 2018-05-07 18:00:08 Use 0.000903 s
+

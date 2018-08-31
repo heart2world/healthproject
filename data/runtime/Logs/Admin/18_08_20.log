@@ -1,0 +1,21 @@
+[ 2018-08-20T12:02:01+08:00 ] 183.226.83.97 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-08-20 12:02:00 Use 0.005079 s
+
+[ 2018-08-20T12:05:02+08:00 ] 183.226.83.97 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-08-20 12:05:02 Use 0.000760 s
+
+[ 2018-08-20T12:06:06+08:00 ] 101.227.131.247 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-08-20 12:06:06 Use 0.000778 s
+
+[ 2018-08-20T12:17:07+08:00 ] 61.151.226.61 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-08-20 12:17:07 Use 0.000862 s
+
+[ 2018-08-20T14:03:32+08:00 ] 183.226.83.97 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-08-20 14:03:32 Use 0.000831 s
+
+[ 2018-08-20T14:08:01+08:00 ] 183.226.83.97 /index.php?g=admin&m=member&a=report_post
+ERR: Cron:cron Runat 2018-08-20 14:08:01 Use 0.000840 s
+
+[ 2018-08-20T14:20:37+08:00 ] 183.226.83.97 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-08-20 14:20:37 Use 0.000820 s
+

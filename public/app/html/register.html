@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>注册</title>
+	    <link rel="stylesheet" href="../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../css/public.css" />
+	    <link rel="stylesheet" href="../css/style.css" />
+	    <script type="text/javascript" src="../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../js/common.js" ></script>
+	</head>
+	<body>
+		<header class="pageHeader">
+			<div class="back">返回</div>
+			<h2>注册</h2>
+		</header>
+		<section class="contentSec loginSec">
+			<div class="weui-cells">
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><img src="../img/info1@2x.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>真实姓名</p>
+	                </div>
+	                <div class="weui-cell__ft">
+	                	<input type="text" class="realName" placeholder="请输入真实姓名" style="font-size: 17px;" />
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><img src="../img/shoujihaoma@2x.png" alt="" style="width:15px;margin-right:8px;margin-left: 2px; display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>手机号</p>
+	                </div>
+	                <div class="weui-cell__ft">
+	                	<input type="number" class="phone" placeholder="请输入手机号" style="font-size: 17px;" />
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><img src="../img/mima@2x.png" alt="" style="width:17px;margin-right:8px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>密码</p>
+	                </div>
+	                <div class="weui-cell__ft">
+	                	<input type="password" class="pwd" placeholder="请输入密码" style="font-size: 17px;" />
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<img src="../img/yanzhengma@2x.png" alt="" style="width:20px;margin-right: 0; display:inline-block">
+	                	<label class="weui-label" style="display: inline-block; width: 70px;">验证码</label></div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input left code" type="number" placeholder="请输入验证码">
+	                </div>
+	                <div class="weui-cell__ft getCode on" onclick="getCode(this,phone);">获取验证码</div>
+	            </div>
+	        </div>
+	        <div class="pd20">
+	        	<a href="javascript:;" class="weui-btn weui-btn_primary register">立即注册</a>
+	        </div>
+		</section>
+	</body>
+</html>
+
+<script>
+	var phone;
+	$(function(){
+		$('.register').click(function(){
+			var realName=$('.realName').val();
+			phone=$('.phone').val();
+			var pwd=$('.pwd').val();
+			var code=$('.code').val();
+			if(realName.length<1){
+				message('请输入真实姓名');
+				return false;
+			}
+			if(phone.length!=11){
+				message('请输入正确手机号');
+				return false;
+			}
+			if(pwd.length<6||pwd.length>20){
+				message('请输入6~20位密码');
+				return false;
+				console.log(000);
+			}
+			if(code.length<1){
+				console.log(222);
+				message('请输入验证码');
+				return false;
+			}
+			$(this).attr('href','login.html').click();
+		})
+	})
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+[ 2018-07-27T09:58:40+08:00 ] 113.96.219.248 /index.php?g=user&m=register&a=index
+ERR: Cron:cron Runat 2018-07-27 09:58:40 Use 0.000702 s
+
+[ 2018-07-27T10:00:03+08:00 ] 61.151.179.83 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-07-27 10:00:03 Use 0.000654 s
+

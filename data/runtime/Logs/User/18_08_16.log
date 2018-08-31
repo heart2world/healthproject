@@ -1,0 +1,12 @@
+[ 2018-08-16T14:16:21+08:00 ] 61.129.6.151 /index.php?g=user&m=login&a=index
+ERR: Cron:cron Runat 2018-08-16 14:16:21 Use 0.000774 s
+
+[ 2018-08-16T14:28:01+08:00 ] 113.96.219.248 /index.php?g=user&m=login&a=dologin
+ERR: Cron:cron Runat 2018-08-16 14:28:01 Use 0.000787 s
+
+[ 2018-08-16T14:34:04+08:00 ] 101.226.79.235 /index.php?g=user&m=register&a=index
+ERR: Cron:cron Runat 2018-08-16 14:34:04 Use 0.000759 s
+
+[ 2018-08-16T14:35:38+08:00 ] 61.151.226.67 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-08-16 14:35:38 Use 0.000777 s
+

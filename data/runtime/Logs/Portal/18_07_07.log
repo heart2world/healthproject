@@ -1,0 +1,6 @@
+[ 2018-07-07T20:02:30+08:00 ] 14.116.133.171 /index.php
+ERR: Cron:cron Runat 2018-07-07 20:02:30 Use 0.003410 s
+
+[ 2018-07-07T20:03:44+08:00 ] 101.226.79.234 /index.php?g=portal&m=index&a=index&isdo=1
+ERR: Cron:cron Runat 2018-07-07 20:03:44 Use 0.000658 s
+

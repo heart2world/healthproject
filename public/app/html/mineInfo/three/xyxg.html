@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>吸烟习惯</title>
+	    <link rel="stylesheet" href="../../../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../../../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../../../css/public.css" />
+	    <link rel="stylesheet" href="../../../css/style.css" />
+	    <script type="text/javascript" src="../../../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../../../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../../../js/common.js" ></script>
+	</head>
+	<body>
+		<header class="pageHeader">
+			<div class="back">返回</div>
+			<h2>吸烟习惯</h2>
+		</header>
+		<section class="contentSec nameSec">
+			<div class="weui-cells weui-cells_checkbox">
+	            <label class="weui-cell weui-check__label" for="s11">
+	                <div class="weui-cell__bd">
+	                    <p>从不吸烟</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="radio" class="weui-check" name="checkbox1" id="s11">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s12">
+	                <div class="weui-cell__bd">
+	                    <p>被动吸烟</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="radio" name="checkbox1" class="weui-check" id="s12">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s13">
+	                <div class="weui-cell__bd">
+	                    <p>长期吸烟</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="radio" name="checkbox1" class="weui-check longYan" id="s13">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="color: #ccc;">每日（根）</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right yan" type="text" readonly placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="color: #ccc;">已抽（年）</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right yan" type="text" readonly placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="width: 45px;">其他</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="text" placeholder="请注明">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="pd20">
+	        	<a href="javascript:;" class="weui-btn weui-btn_primary save">保存</a>
+	        </div>
+		</section>
+	</body>
+</html>
+<script>
+	$('.save').click(function(){
+		var state=0
+		$('input[type=radio]').each(function(){
+			if($(this).is(':checked')){
+				state=1;
+			}
+		})
+		$('input[type=text]').each(function(){
+			if($(this).val().length>0){
+				state=1;
+			}
+		})
+		if(state==0){
+			message('请完善吸烟习惯');
+			return false;
+		}		
+		back(1);
+	})
+	
+	$('input[type=radio]').change(function(){
+		if($('.longYan').is(':checked')){
+			$('.yan').attr('readonly',false).val('').parents('.weui-cell').find('.weui-label').css('color','#464646');
+		}
+		else{
+			$('.yan').attr('readonly',true).val('').parents('.weui-cell').find('.weui-label').css('color','#ccc');
+		}
+	})
+	
+</script>

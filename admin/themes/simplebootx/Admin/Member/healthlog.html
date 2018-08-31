@@ -1,0 +1,63 @@
+<admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap" id="app">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Member/index')}">用户列表</a></li>
+			<li class="active"><a href="javascript:;">健康日志</a></li>
+		</ul>
+		<form class="form-horizontal" id="tagforms" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">姓名：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$minfo.nicename}</span>
+					</div>
+				</div>	
+				<div class="control-group">
+					<label class="control-label">电话：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$minfo.mobile}</span>
+					</div>
+				</div>	
+				<div class="row-fluid">
+					<div class="" style="width: 100%;">
+						<table class="table table-bordered" width="100%">
+						    <tr>
+								<th width="100%" colspan="6" style="font-size: 16px;color: #1abc9c;">日志记录</th>
+							</tr>
+							<tr>
+								<th style="min-width: 50px;text-align: center;">ID</th>
+								<th style="min-width: 80px;text-align: center;">日期</th>
+								<th style="min-width: 100px;text-align: center;">体重（KG）</th>
+								<th style="min-width: 100px;text-align: center;">血压（mmHG）</th>
+								<th style="min-width: 100px;text-align: center;">血糖（mmol/L）</th>
+								<th style="min-width: 150px;text-align: center;">身体描述</th>
+								<th style="min-width: 150px;text-align: center;">操作</th>
+							</tr>
+							<volist name="loglist" id="va">
+							<tr>
+								<td style="text-align: center;">{$va.id}</td>
+								<td style="text-align: center;">{$va.logtime}</td>
+								<td style="text-align: center;">{$va.mweight}</td>
+								<td style="text-align: center;">{$va.mmxy}/{$va.mmxy2}</td>
+								<td style="text-align: center;">{$va.mmxt}</td>
+								<td style="text-align: center;">{$va.desc}</td>
+								<td style="text-align: center;"><a href="{:U('Member/showhealthlog',array('id'=>$va['id']))}" class="btn btn-primary" style="padding: 2px 15px;color: white;background-color: #1dccaa;">查看图片</a></td>
+							</tr>
+							</volist>
+						</table>
+						<div class="pagination" style="float: right;">{$page}</div>
+					</div>											
+				</div>		
+			</fieldset>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

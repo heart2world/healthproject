@@ -1,0 +1,12 @@
+[ 2018-05-02T15:08:51+08:00 ] 113.251.21.212 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-05-02 15:08:51 Use 0.007038 s
+
+[ 2018-05-02T15:10:07+08:00 ] 117.135.170.150 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-05-02 15:10:07 Use 0.006615 s
+
+[ 2018-05-02T15:20:49+08:00 ] 113.251.21.212 /index.php?g=admin&m=member&a=index&p=2
+ERR: Cron:cron Runat 2018-05-02 15:20:49 Use 0.000882 s
+
+[ 2018-05-02T17:26:20+08:00 ] 47.92.29.149 /index.php?g=admin&m=member&a=index&p=2
+ERR: Cron:cron Runat 2018-05-02 17:26:20 Use 0.000844 s
+

@@ -1,0 +1,9 @@
+[ 2018-07-26T16:47:01+08:00 ] 183.226.81.250 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-07-26 16:47:01 Use 0.000724 s
+
+[ 2018-07-26T16:48:57+08:00 ] 183.226.81.250 /index.php?g=admin&m=setting&a=tixing
+ERR: Cron:cron Runat 2018-07-26 16:48:57 Use 0.000740 s
+
+[ 2018-07-26T16:49:57+08:00 ] 183.226.81.250 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-07-26 16:49:57 Use 0.000755 s
+

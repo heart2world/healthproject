@@ -1,0 +1,21 @@
+[ 2018-06-29T08:56:29+08:00 ] 101.226.79.238 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-06-29 08:56:29 Use 0.000884 s
+
+[ 2018-06-29T09:11:26+08:00 ] 113.96.218.51 /index.php?g=user&m=center&a=jianchadetail&id=65
+ERR: Cron:cron Runat 2018-06-29 09:11:26 Use 0.002754 s
+
+[ 2018-06-29T09:12:26+08:00 ] 101.226.79.226 /index.php?g=user&m=center&a=jianchadetail&id=65
+ERR: Cron:cron Runat 2018-06-29 09:12:26 Use 0.002232 s
+
+[ 2018-06-29T09:37:11+08:00 ] 183.228.29.163 /index.php?g=user&m=login&a=dologin
+ERR: Cron:cron Runat 2018-06-29 09:37:11 Use 0.001560 s
+
+[ 2018-06-29T09:38:26+08:00 ] 61.151.226.67 /index.php?g=User&m=Wexin&a=get_user2
+ERR: Cron:cron Runat 2018-06-29 09:38:26 Use 0.002358 s
+
+[ 2018-06-29T09:53:50+08:00 ] 101.226.226.221 /index.php?g=user&m=center&a=jianchadetail&id=66
+ERR: Cron:cron Runat 2018-06-29 09:53:50 Use 0.000708 s
+
+[ 2018-06-29T10:28:57+08:00 ] 106.84.197.13 /index.php?g=user&m=login&a=dologin
+ERR: Cron:cron Runat 2018-06-29 10:28:57 Use 0.000904 s
+

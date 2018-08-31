@@ -1,0 +1,9 @@
+[ 2018-06-18T10:10:41+08:00 ] 61.151.226.67 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-06-18 10:10:41 Use 0.000709 s
+
+[ 2018-06-18T10:13:53+08:00 ] 183.3.255.32 /index.php?g=user&m=center&a=logout
+ERR: Cron:cron Runat 2018-06-18 10:13:53 Use 0.000706 s
+
+[ 2018-06-18T10:14:54+08:00 ] 61.151.226.151 /index.php?g=user&m=center&a=logout
+ERR: Cron:cron Runat 2018-06-18 10:14:54 Use 0.000731 s
+

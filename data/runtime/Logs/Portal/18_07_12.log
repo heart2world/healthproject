@@ -1,0 +1,21 @@
+[ 2018-07-12T08:41:06+08:00 ] 183.3.255.32 /index.php
+ERR: Cron:cron Runat 2018-07-12 08:41:06 Use 0.000683 s
+
+[ 2018-07-12T08:42:06+08:00 ] 140.207.118.16 /index.php
+ERR: Cron:cron Runat 2018-07-12 08:42:06 Use 0.000747 s
+
+[ 2018-07-12T09:38:49+08:00 ] 113.251.49.221 /index.php
+ERR: Cron:cron Runat 2018-07-12 09:38:49 Use 0.000824 s
+
+[ 2018-07-12T09:43:11+08:00 ] 113.251.49.221 /index.php
+ERR: Cron:cron Runat 2018-07-12 09:43:11 Use 0.000630 s
+
+[ 2018-07-12T09:44:35+08:00 ] 101.226.86.155 /index.php?g=portal&m=index&a=index&isdo=1
+ERR: Cron:cron Runat 2018-07-12 09:44:35 Use 0.000656 s
+
+[ 2018-07-12T09:57:47+08:00 ] 113.251.18.50 /index.php
+ERR: Cron:cron Runat 2018-07-12 09:57:47 Use 0.000704 s
+
+[ 2018-07-12T10:00:36+08:00 ] 61.151.225.191 /index.php?g=portal&m=index&a=index&isdo=1
+ERR: Cron:cron Runat 2018-07-12 10:00:36 Use 0.000688 s
+

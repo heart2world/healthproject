@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>用药史</title>
+	    <link rel="stylesheet" href="../../../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../../../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../../../css/public.css" />
+	    <link rel="stylesheet" href="../../../css/style.css" />
+	    <script type="text/javascript" src="../../../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../../../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../../../js/common.js" ></script>
+	</head>
+	<body>
+		<header class="pageHeader">
+			<div class="back">返回</div>
+			<h2>用药史</h2>
+		</header>
+		<section class="contentSec nameSec">
+			<div class="weui-cells weui-cells_checkbox">
+	            <label class="weui-cell weui-check__label" for="s11">
+	                <div class="weui-cell__bd">
+	                    <p>无</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check nothing" name="checkbox1" id="s11">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s12">
+	                <div class="weui-cell__bd">
+	                    <p>降压降糖药</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check" name="checkbox1" id="s12">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s13">
+	                <div class="weui-cell__bd">
+	                    <p>缓解哮喘药物</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check" name="checkbox1" id="s13">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s14">
+	                <div class="weui-cell__bd">
+	                    <p>解热镇痛药物</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check" name="checkbox1" id="s14">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s15">
+	                <div class="weui-cell__bd">
+	                    <p>激素类药物</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check" name="checkbox1" id="s15">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <label class="weui-cell weui-check__label" for="s16">
+	                <div class="weui-cell__bd">
+	                    <p>抗抑郁药物</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check" name="checkbox1" id="s16">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">药品名称</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right" type="text" placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">服务剂量</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right" type="text" placeholder="请输入">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="width: 45px;">其他</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="text" placeholder="请注明">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="pd20">
+	        	<a href="javascript:;" class="weui-btn weui-btn_primary save">保存</a>
+	        </div>
+		</section>
+	</body>
+</html>
+<script>
+$(function(){
+	$('.save').click(function(){
+		var state=0;
+		$('input[type=checkbox]').each(function(){
+			if($(this).is(':checked')){
+				state=1;
+			}
+		})
+		$('input[type=text]').each(function(){
+			if($(this).val().length>1){
+				state=1;
+			}
+		})
+		if(state==0){
+			message('请选择用药史');
+			return false;
+		}
+		back(1);
+	})
+	
+	var state=1;
+	$('.nothing').change(function(){
+		console.log(111);
+		if($(this).is(':checked')){
+			state=0;
+			$('input[type=checkbox]').each(function(){
+				if(!$(this).hasClass('nothing')){
+					$(this).attr({'disabled':true,'checked':false});
+					$(this).parents('label').find('p').css('color','#ccc');
+				}
+			})
+		}
+		else{
+			state=1;
+			$('input[type=checkbox]').attr('disabled',false).parents('label').find('p').css('color','#464646');
+		}
+	})
+})
+	
+</script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>女性生育史</title>
+	    <link rel="stylesheet" href="../../../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../../../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../../../css/public.css" />
+	    <link rel="stylesheet" href="../../../css/style.css" />
+	    <script type="text/javascript" src="../../../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../../../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../../../js/common.js" ></script>
+	</head>
+	<body>
+		<header class="pageHeader">
+			<div class="back">返回</div>
+			<h2>女性生育史</h2>
+		</header>
+		<section class="contentSec nameSec">
+			<div class="weui-cells weui-cells_checkbox">
+	            <label class="weui-cell weui-check__label" for="s11">
+	                <div class="weui-cell__bd">
+	                    <p>无</p>
+	                </div>
+	                <div class="weui-cell__hd">
+	                    <input type="checkbox" class="weui-check nothing" name="checkbox1" id="s11">
+	                    <i class="weui-icon-checked"></i>
+	                </div>
+	            </label>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">流产史</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="number" placeholder="请输入次数">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">怀孕史</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="number" placeholder="请输入次数">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">生产史</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="number" placeholder="请输入次数">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">生产方式</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="text" placeholder="请输入顺产或剖腹">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">宫外孕史</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="number" placeholder="请输入次数">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">绝经年龄</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="number" placeholder="请输入年龄">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label" style="width: 45px;">其他</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input right other" type="text" placeholder="请注明">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="pd20">
+	        	<a href="javascript:;" class="weui-btn weui-btn_primary save">保存</a>
+	        </div>
+		</section>
+	</body>
+</html>
+<script>
+$(function(){
+	//监听输入框变化事件
+	$('input').bind('input propertychange', function() {  
+		var val=$(this).val();
+	    if(val.length>2){
+			message('请输入合理数据');
+			$(this).val(val.substr(0,2));
+			$(this).blur();
+			return false;
+		}
+	});
+	
+	$('.save').click(function(){
+		var state=0;
+		$('input[type=checkbox]').each(function(){
+			if($(this).is(':checked')){
+				state=1;
+			}
+		})
+		$('input[type=text]').each(function(){
+			if($(this).val().length>1){
+				state=1;
+			}
+		})
+		if(state==0){
+			message('请选择女性生育史');
+			return false;
+		}
+		back(1);
+	})
+	
+	var state=1;
+	$('.nothing').change(function(){
+		console.log(111);
+		if($(this).is(':checked')){
+			state=0;
+			$('input[type=text]').each(function(){
+				$(this).attr('readonly',true).val('');
+				$(this).parents('.weui-cell').find('.weui-label').css('color','#ccc');
+			})
+			$('input[type=number]').each(function(){
+				$(this).attr('readonly',true).val('');
+				$(this).parents('.weui-cell').find('.weui-label').css('color','#ccc');
+			})
+		}
+		else{
+			state=1;
+			$('input[type=text]').attr('readonly',false).parents('.weui-cell').find('.weui-label').css('color','#464646');
+			$('input[type=number]').attr('readonly',false).parents('.weui-cell').find('.weui-label').css('color','#464646');
+		}
+	})
+})
+	
+</script>

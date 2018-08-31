@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>出生日期</title>
+	    <link rel="stylesheet" href="../../../lib/weui/jquery-weui.css" />
+	    <link rel="stylesheet" href="../../../lib/weui/weui.min.css" />
+	    <link rel="stylesheet" href="../../../css/public.css" />
+	    <link rel="stylesheet" href="../../../css/style.css" />
+	    <script type="text/javascript" src="../../../lib/jq/jquery-1.10.2.js" ></script>
+	    <script type="text/javascript" src="../../../lib/weui/jquery-weui.js" ></script>
+	    <script type="text/javascript" src="../../../js/common.js" ></script>
+	</head>
+	<style>
+		body input{
+			height: 2rem;
+			line-height: 2rem;
+			text-align: right;
+			font-size: 17px;
+		}
+	</style>
+	<body>
+		<header class="pageHeader">
+			<div class="back">返回</div>
+			<h2>出生日期</h2>
+		</header>
+		<section class="contentSec nameSec">
+	        <div class="weui-cells weui-cells_form">
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd">
+	                	<label for="" class="weui-label">日期</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <input class="weui-input birth" type="date" value="">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="pd20">
+	        	<a href="javascript:;" class="weui-btn weui-btn_primary save">保存</a>
+	        </div>
+		</section>
+	</body>
+</html>
+<script>
+	$(function(){
+		$('.save').click(function(){
+		if($('.birth').val().length<1){
+			message('请选择日期');
+			return false;
+		}
+		back(1);
+	})
+	$('#showDatePicker').on('click', function () {
+	        weui.datePicker({
+	            start: 1990,
+	            end: new Date().getFullYear(),
+	            onChange: function (result) {
+	                console.log(result);
+	            },
+	            onConfirm: function (result) {
+	                console.log(result);
+	            }
+	        });
+	    });
+	})
+	
+</script>

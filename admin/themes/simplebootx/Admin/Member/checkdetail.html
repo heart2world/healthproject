@@ -1,0 +1,217 @@
+<admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+#app span p img{width:65%;}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap" id="app">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Member/index')}">用户列表</a></li>
+			<li class="active"><a href="javascript:;">报告详细</a></li>
+		</ul>
+		<form class="form-horizontal" id="tagforms" method="post" enctype="multipart/form-data">
+			<fieldset>
+				
+				<div class="control-group">
+					<label class="control-label">检查时间：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$info.checktime}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">检查机构：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$info.checkname}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">相关说明：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$info.checkdesc}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">复查时间：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<if condition="$info['againtime'] eq '0000-00-00'">
+						<span>无</span>
+						<else/>
+						<span>{$info.againtime}</span>
+						</if>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">复查地址：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<if condition="$info['againaddress'] eq ''">
+						<span>无</span>
+						<else/>
+						<span>{$info.againaddress}</span>
+						</if>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">常见指标：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>1、血常规</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>白细胞（x10^9/L）</span>&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mmwhite}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>血红蛋白（G/L）</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mmblood}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>血小板计数（x10^9/L）</span>&nbsp;<span style="margin-left: 70px;">{$info.mmblock}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>血尿酸（umol/L）</span>&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mmls}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<span>2、血脂</span>
+					</div>
+				</div>				
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>总胆固醇（mmol/L）</span>&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.modgc}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>甘油三酯（mmol/L）</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mogysz}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>高密度脂蛋白胆固醇（mmol/L）</span>&nbsp;<span style="margin-left: 70px;">{$info.mogaodgc}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>低密度脂蛋白胆固醇（mmol/L）</span>&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.modidgc}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>3、肝功</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>谷草转氨酶（u/L）</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mcgczam}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>谷丙转氨酶（u/L）</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mcgbzam}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>总胆红素（umol/L）</span>&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.mczdhs}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>4、其他项目</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>甲胎蛋白AFP（ng/ml）</span>&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.maafp}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>癌胚抗原CEA（ng/ml）</span>&nbsp;&nbsp;<span style="margin-left: 70px;">{$info.macea}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>糖类抗原CA125（U/ml）</span><span style="margin-left: 70px;">{$info.maca125}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">&nbsp;</label>
+					<div class="controls">
+						<span>糖类抗原CA153（U/ml）</span><span style="margin-left: 70px;">{$info.maca153}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">检查项目/结果：</label>
+					<div class="controls" style="margin-top: 5px;">
+						<span>{$info.reportdesc}</span>
+					</div>
+				</div>								
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="mid" value="{$minfo.id}">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/vue.js"></script>
+	<script src="__PUBLIC__/js/content_addtop.js"></script>
+	<script src="__PUBLIC__/js/define_my.js"></script>
+	<script src="__PUBLIC__/js/artDialog/artDialog.js"></script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.WEB_ROOT;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					return editorcontent.hasContents();
+				});
+			})
+	});
+	</script>
+</body>
+</html>

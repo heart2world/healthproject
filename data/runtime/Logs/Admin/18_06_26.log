@@ -1,0 +1,33 @@
+[ 2018-06-26T10:11:42+08:00 ] 183.228.28.99 /index.php?g=admin&m=index&a=index
+ERR: Cron:cron Runat 2018-06-26 10:11:42 Use 0.000679 s
+
+[ 2018-06-26T10:14:13+08:00 ] 183.228.28.99 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-06-26 10:14:13 Use 0.000699 s
+
+[ 2018-06-26T10:15:16+08:00 ] 183.228.28.99 /index.php?g=admin&m=public&a=dologin
+ERR: Cron:cron Runat 2018-06-26 10:15:16 Use 0.000690 s
+
+[ 2018-06-26T10:16:16+08:00 ] 183.228.28.99 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-06-26 10:16:16 Use 0.000675 s
+
+[ 2018-06-26T10:18:40+08:00 ] 183.228.28.99 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-06-26 10:18:40 Use 0.000693 s
+
+[ 2018-06-26T10:19:54+08:00 ] 183.228.28.99 /index.php?g=admin&m=rbac&a=authorize&id=3
+ERR: Cron:cron Runat 2018-06-26 10:19:54 Use 0.000940 s
+
+[ 2018-06-26T10:21:13+08:00 ] 183.228.28.99 /index.php?g=admin&m=member&a=mdetail&id=51
+ERR: Cron:cron Runat 2018-06-26 10:21:13 Use 0.000674 s
+
+[ 2018-06-26T10:23:31+08:00 ] 183.228.28.99 /index.php?g=admin&m=member&a=index
+ERR: Cron:cron Runat 2018-06-26 10:23:31 Use 0.000745 s
+
+[ 2018-06-26T10:24:33+08:00 ] 183.228.28.99 /index.php?g=admin&m=member&a=checkdetail&id=62
+ERR: Cron:cron Runat 2018-06-26 10:24:33 Use 0.000658 s
+
+[ 2018-06-26T10:32:36+08:00 ] 183.228.28.99 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-06-26 10:32:36 Use 0.000645 s
+
+[ 2018-06-26T10:34:07+08:00 ] 183.228.28.99 /index.php?g=admin&m=public&a=login
+ERR: Cron:cron Runat 2018-06-26 10:34:07 Use 0.000687 s
+

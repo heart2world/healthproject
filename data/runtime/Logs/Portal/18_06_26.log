@@ -1,0 +1,12 @@
+[ 2018-06-26T01:23:35+08:00 ] 113.250.236.232 /index.php
+ERR: Cron:cron Runat 2018-06-26 01:23:35 Use 0.004722 s
+
+[ 2018-06-26T22:00:47+08:00 ] 223.104.249.243 /index.php
+ERR: Cron:cron Runat 2018-06-26 22:00:47 Use 0.005529 s
+
+[ 2018-06-26T22:02:08+08:00 ] 61.151.226.165 /index.php?g=portal&m=index&a=index&isdo=1
+ERR: Cron:cron Runat 2018-06-26 22:02:08 Use 0.000678 s
+
+[ 2018-06-26T22:19:00+08:00 ] 120.204.17.72 /index.php
+ERR: Cron:cron Runat 2018-06-26 22:19:00 Use 0.000735 s
+

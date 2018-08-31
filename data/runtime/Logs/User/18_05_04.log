@@ -1,0 +1,15 @@
+[ 2018-05-04T10:42:32+08:00 ] 113.96.219.247 /index.php?g=user&m=center&a=checklist
+ERR: Cron:cron Runat 2018-05-04 10:42:32 Use 0.000958 s
+
+[ 2018-05-04T10:43:34+08:00 ] 61.151.226.61 /index.php?g=user&m=center&a=checklist
+ERR: Cron:cron Runat 2018-05-04 10:43:34 Use 0.000824 s
+
+[ 2018-05-04T15:44:26+08:00 ] 117.185.117.60 /index.php?g=user&m=login&a=index
+ERR: Cron:cron Runat 2018-05-04 15:44:26 Use 0.000830 s
+
+[ 2018-05-04T15:45:27+08:00 ] 113.96.219.249 /index.php?g=user&m=center&a=index
+ERR: Cron:cron Runat 2018-05-04 15:45:27 Use 0.000876 s
+
+[ 2018-05-04T15:47:04+08:00 ] 113.96.219.249 /index.php?g=user&m=profile&a=editbirthpost
+ERR: Cron:cron Runat 2018-05-04 15:47:04 Use 0.000874 s
+
